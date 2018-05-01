@@ -101,4 +101,15 @@ public class PotusTest {
 		System.out.println("notASingleWifeMore2Child " +notASingleWifeMore2Child);
 		
 	}
+	
+	@Test
+	public void paralel_streams(){
+		Potus trump = potuses.get(0);
+		trump.getWifes()
+			.stream()
+			.filter(wife -> wife.getName().startsWith("M"))
+			.findAny()
+			.ifPresent(wife -> System.out.println(wife.getName()));
+
+	}
 }
