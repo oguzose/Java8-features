@@ -13,6 +13,10 @@ public class Main {
     numberList.stream()
            .filter(n-> n %2 == 0)
            .forEach(System.out::println);
+
+    List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    int sum = integers.stream().mapToInt(Integer::intValue).sum();
+    System.out.println("Total : " + sum);
     
     
     List<String> lines = Arrays.asList("spring", "node", "mkyong");
