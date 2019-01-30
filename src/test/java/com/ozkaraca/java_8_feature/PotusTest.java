@@ -31,6 +31,16 @@ public class PotusTest {
             new Potus("Bill", "Clinton", 1992, "Democration")
     );
 
+
+    @Test
+    public void filterMap() {
+        potuses.stream()
+                .filter(potus -> potus.getElectionYear() > 2000)
+                .map(Potus::getLastName)
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+    }
+
     @Test
     public void filterMapLimitDistinctCollecct() {
         potuses.stream()
@@ -42,6 +52,12 @@ public class PotusTest {
                 .forEach(System.out::println);
     }
 
+    @Test
+    public void flatmapSimple() {
+        Potus trump = potuses.get(0);
+        List<Child> children = trump.getWifes().stream().flatMap(w -> w.getChildren().stream()).collect(Collectors.toList());
+        children.forEach(System.out::println);
+    }
 
     @Test
     public void flatmap_sort_collect() {
@@ -52,7 +68,6 @@ public class PotusTest {
                 .sorted(Comparator.comparing(Child::getAge))
                 .collect(Collectors.toList());
         System.out.println(kids);
-
     }
 
     @Test
@@ -127,7 +142,6 @@ public class PotusTest {
         trump.getWifes().stream()
                 .filter(wife -> wife.getName().startsWith("M"))
                 .forEach(System.out::print);
-
     }
 
     @Test
