@@ -3,7 +3,8 @@ package com.ozkaraca.java_8_feature;
 public class Child {
 	
 	String name;
-	
+
+	String surname;
 	int age;
 	
 	public Child(String name, int age) {
