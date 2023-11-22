@@ -21,6 +21,8 @@ public class Main {
     
     List<String> lines = Arrays.asList("spring", "node", "mkyong");
 
+    //Demo
+
     List<String> result = lines.stream()                // convert list to stream
             .filter(line -> !"mkyong".equals(line))     // we dont like mkyong
             .collect(Collectors.toList());              // collect the output and convert streams to a List
