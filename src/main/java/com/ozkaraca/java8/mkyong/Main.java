@@ -9,6 +9,7 @@ import org.junit.Test;
 public class Main {
   public static void main(String[] args) {
     List<Integer> numberList = Arrays.asList(1,2,3,4,5);
+    List<Integer> numberList2 = Arrays.asList(6,6,3,4,5);
 
     numberList.stream()
            .filter(n-> n %2 == 0)
